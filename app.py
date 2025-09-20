@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # --- MongoDB Atlas Connection ---
-MONGO_URI = "mongodb+srv://abhisheksmd1_db_user:1FmphEPRE29GR8a6@cluster0.7fsrms0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGO_URI = "mongodb+srv://<db_user>:<password>@cluster0.7fsrms0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 try:
     client = MongoClient(MONGO_URI)
@@ -97,3 +97,4 @@ def delete_task(task_id):
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
+
