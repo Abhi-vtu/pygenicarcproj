@@ -1,0 +1,119 @@
+/* Full app background */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f2027;  /* fallback */
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+/* Overlay so content is readable over canvas */
+.App {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Add Task Form */
+.task-form, .App > div > div > input {
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background: #00bcd4;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0097a7;
+}
+
+/* Kanban Board */
+.kanban-board {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.kanban-column {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 10px;
+  border-radius: 10px;
+  min-height: 400px;
+  backdrop-filter: blur(4px);
+}
+
+.kanban-column h2 {
+  text-align: center;
+  color: #00e5ff;
+  margin-bottom: 15px;
+}
+
+/* Task Cards */
+.task-card {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.2s, background 0.3s;
+  cursor: grab;
+}
+
+.task-card:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(1.02);
+}
+
+.task-card h3 {
+  margin: 0 0 5px;
+  color: #00e5ff;
+}
+
+.task-card p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #e0f7fa;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.no-tasks {
+  text-align: center;
+  color: #aaa;
+  margin-top: 20px;
+}
+
+/* Canvas Background */
+.bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: black;
+}
